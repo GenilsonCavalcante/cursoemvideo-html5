@@ -1,0 +1,226 @@
+@charset "UTF-8";
+@font-face {          /*para definir fontes exteriores*/
+	font-family: 'FonteLogo';    /*nome que você deseja dar para a fonte, e que através dele possa colocar nos locais desejados*/
+	src: url("../_fonts/bubblegum-sans-regular.otf");       /*caminho que se localiza a fonte externa que deseja colocar. obs: deve ter o cuidado nas extensões que a fonte possui*/
+}
+@font-face {         
+	font-family: 'FonteLogoComputer';
+	src: url("../_fonts/computer-font.ttf"); /*outro tipo de fonte. obs: para especificar isso em parênteses, nomes devem ser escritos entre aspas duplas*/
+}
+
+body {
+	/* nesse local, colocar uma imagem de fundo. o professor colocou uma de 'aço escovado' ver aula 08-sansung notes*/
+	background-color: #dddddd;
+	color: rgba(0, 0, 0, 0.6);
+	font-family: Arial, sans-serif;  /*melhor formatação para çetras de conteúdos*/
+	}
+div#interface {
+	width: 900px;  /*largura de 400px, para que o site se divida*/
+	background-color: #ffffff; /*fundo branco para a interface*/
+	margin: -20px auto 0px auto; /*espaçamentos, 1° em cima; direita; em baixo; esquerda.*/
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, .7); /*Deslocamento vertical depois horizontal, espalhamento da sombra e cor da sombra*/
+	padding: 10px 10px 10px 10px; /*para os posicionamentos dentro de margin*/
+
+}
+
+p {
+	text-align: justify; 
+	text-indent: 50px;
+}
+
+a {
+	color: #606060;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+header#cabecalho img#icone { 
+	position: absolute;
+	left: 915px;
+	top: 70px;
+}
+header#cabecalho h1{          /*formatação para o título h1 do cabecalho*/
+	font-family: 'FonteLogo', sans-serif; /*fonte personalizada e sem sarifas*/
+	font-size: 30pt;  /*tamanho da fonte dimensionada por pontos*/
+	color: #606060;   /*cor sinza*/
+	text-shadow: 1px 1px 1px rgba(0,0,0,.6); /*testo sombreado com seu delocamento lateral, vertical, espalhamento da sombra e cor em rgba*/
+	padding: 0px; /*espaçamento interno*/
+	margin-bottom: 0px;   /*margem para baixo de h1, de 0px*/
+}
+header#cabecalho h2{        /*formatação para o título h2 do cabecalho*/
+	font-family: 'FonteLogoComputer', sans-serif;   /*fonte personalizada*/
+	font-size: 22pt;
+	color: #888888;   /*cinza mais claro*/
+	padding: 0px;   /*espaçamento interno*/
+	margin-top: 0px;   /*margin para cima de h2, valor de 0px*/
+}
+
+header#cabecalho {
+	border-bottom: 1px black solid;   /*borda inferior de espessura de 1px, cor preta e de formato sólido*/
+	height: 150px;   /*150px de altura para a borda*/
+	background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;  /*colocando imagem através dessa formatação por meio da url, colocamos o caminho da imagem depois dos parênteses colocamos para que a imagem não se repita, e colocamos em seguida os dois parâmetros, o primeiro é o deslocamento lateral e o segundo vertical*/
+}
+figure.foto-legenda {          /*elemento pai de figcaption-campo da imagem*/
+	position: relative;
+	border: 8px solid white; /*8px de largura, tipo sólida e da cor vermelha*/
+	box-shadow: 1px 1px 4px black; /*Colocando sombra na borda.*/
+}
+figure.foto-legenda img {
+	width: 100%;
+	height: 100%;
+}
+figure.foto-legenda figcaption {   /*elemeto filho de figure-campo para o título da figura.*/
+	opacity: 0;     /*para efeito de surgimento no mause*/
+	position: absolute;
+	top: 0px;
+	background-color: rgba(0, 0, 0, .4);
+	color: white; /*cor da letra branca*/
+	width: 100%;
+	height: 100%;
+	padding: 10px;  /*espaçamento para a legenda*/
+	box-sizing: border-box;  /*criando um box dentro da bordar*/
+	transition: opacity 1s;  /*efeito para a legenda aparecer com o tempo de 1 segundo*/
+}
+figure.foto-legenda:hover figcaption {   /*Formatação para o surgimento da legenda*/
+	opacity: 1;   /*Valor para a opacidade, quando o mause passar, fazer surgir a legenda*/
+}
+
+/* Formatação do menu */
+nav#menu {
+	display: block;   /* para deixar o menu flutuar, definimos ele como bloco */
+}
+
+nav#menu ul{
+	list-style: none; /* para retirar as bolinhas dos itens em lista */
+	text-transform: uppercase; /* deixando todas as letras maiúsculas */
+	position: absolute;  /* posição para o site completo */
+	top: -20px;     /*posição para o topo*/
+	left: 440px;  /*posição para a vertical direita*/
+}
+nav#menu li{            /* formatação para todos os elementos li */
+	display: inline-block;   /* deixando os itens na horizontal, em linha */
+	background-color: #dddddd; /* cor de fundo para os elementos */
+	padding: 10px;  /* espaçamento de dentro de cada elemento */
+	margin: 2px;    /* espaçamento fora do elemento, separando mais cada um */
+	transition: background-color 1s; /*fazer com que a cor apareça após 1 segundo*/
+}
+nav#menu li:hover {  /*Formatação para o surgimento da cor mais escura*/
+	background-color: #606060;  /*Para fazer a cor aparecer em cinza mais escuro*/
+}
+nav#menu h1{
+	display: none;  /*para fazer o título de h1 no menu desaparecer.*/
+}
+nav#menu a{                 /*Formatação para o link*/
+	color: #000000;         /*Cor preta*/
+	text-decoration: none;  /*retirando o sublinhado*/
+}
+nav#menu a:hover {    /*Formatação para mudar a vor do link quando passar o mause*/
+	color: #ffffff;   /*Cor branca*/
+	text-decoration: underline;  /*Fazer aparecer o sublinhado*/
+}
+
+section#corpo {       /*área principal do site*/
+	display: block;   /*área definida como bloco*/
+	width: 500px;     /*largura*/
+	float: left;      /*flutuar pelo lado esquerdo*/
+	border-right: 1px solid #606060;   /*borda do lado direito*/
+	padding-right: 15px;       /*espaço interno para esse bloco*/
+}
+article#noticia-principal h2{    /*formatação para artigo para tudo que for h2*/
+	font-size: 13pt;
+	color: #606060;
+	background-color: #dddddd;
+	padding: 5px 0px 5px 10px; /*espaçamento interno*/
+	margin: 10px 0px 10px 0px; /*espaçamento externo*/
+}
+header#cabecalho-artigo h1{
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+header#cabecalho-artigo h2{
+	font-size: 12pt;
+	color: #cecece;
+	background-color: #ffffff;
+	margin: 0px;
+}
+
+header#cabecalho-artigo h3{
+	font-size: 12pt;
+	color: #606060;
+}
+.direita{              /*para apenas o h3 em específico, fique alinhado a direita*/
+	text-align: right;
+}
+
+table#tabelaspec {             /*tabela*/
+	border: 1px solid #606060;
+	border-spacing: 0px;       /*espaçamento entre as células de 0px*/
+	margin-left: auto;      /*deixando a tabela centralizada*/
+	margin-right: auto;     /*deixando a tabela centralizada*/
+}
+table#tabelaspec td{             /*para tudo que for célula*/
+	border: 1px solid #606060; /*tabela com limitaçoes internas*/
+	padding: 10px;             /*epaçamento interno para a tabela*/
+}
+table#tabelaspec td.ce {         /*classe introduzida aqui*/
+	color: #ffffff;
+	background-color: #606060;
+	text-align: right;
+	vertical-align: top;          /*posição vertical para cima*/
+	font-weight: bold;            /*fonte em negrito*/
+}
+table#tabelaspec td.cd {          /*classe introduzida aqui*/
+	background: #cecece;
+	text-align: left; 
+}
+table#tabelaspec caption {
+	color: #888888;
+	font-size: 13pt;              /*atanção para px, e para pt, que esse é para fontes*/
+	font-weight: bolder;          /*fonte em negrito*/
+}
+table#tabelaspec caption span {   /*para formatar a data do título da tabela*/
+	display: block;          /*definir como um bloco*/
+	float: right;            /*para flutuar a direita*/
+	color: #000000;
+	font-size: 8pt;      /*tamanho menor com relação ao título*/
+	margin-top: 10px;    /*espaçamento externo, para que fique podicionado em baixo*/
+}
+
+aside#lateral {       /*área lateral do site*/
+	display: block;
+	width: 350px;
+	float: right;     /*flutuar para o lado direito*/
+	background-color: #dddddd;
+	padding: 10px;
+	margin-top: 10px; 
+	box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+aside#lateral h1{
+	font-family: 'FonteLogo', sans-serif;
+	font-size: 20pt;
+	color: #606060;
+	margin-top: 0px;
+}
+ 
+aside#lateral h2{
+	background-color: #606060;
+	font-size: 13pt;
+	color: #ffffff;
+	padding: 5px;
+}
+
+footer#rodape {
+	clear: both;      /*limpando as áreas que foram deixadas pelo section e aside*/
+	border-top: 1px solid #606060; /*borda em cima do rodapé*/
+}
+footer#rodape p{         /*formatação para tudo o que é parágrafo que está dentro de footer#rodape*/
+	text-align: center;  /*alinhar texto ao centro*/ 
+}
+
